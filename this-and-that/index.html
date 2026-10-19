@@ -32,58 +32,92 @@
 <p>Натисни 🔊, послухай і повтори вголос. Покажи жест!</p>
 
 <div class="card ex">
-  <div class="scene this"><img class="kid" src="../img/kid-hold.svg" alt=""><img class="obj" src="../img/book.svg" alt="book"></div>
-  <div><div class="en">This is a book.</div><div class="ua">Книжка в руці.</div></div>
-  <button class="say" data-say="This is a book.">🔊</button>
+  <div class="scene this"><img class="kid" src="../img/kid-hold.svg" alt=""><img class="obj" src="../img/book-red.svg" alt=""></div>
+  <div><div class="en">This is a red book.</div><div class="ua">Червона книжка в руці.</div></div>
+  <button class="say" data-say="This is a red book.">🔊</button>
 </div>
 <div class="card ex">
-  <div class="scene that"><img class="kid" src="../img/kid-point.svg" alt=""><span class="dots"></span><img class="obj" src="../img/robot.svg" alt="robot"></div>
-  <div><div class="en">That is a robot.</div><div class="ua">Робот далеко.</div></div>
-  <button class="say" data-say="That is a robot.">🔊</button>
+  <div class="scene that"><img class="kid" src="../img/kid-point.svg" alt=""><span class="dots"></span><img class="obj" src="../img/robot-grey.svg" alt=""></div>
+  <div><div class="en">That is a grey robot.</div><div class="ua">Сірий робот далеко.</div></div>
+  <button class="say" data-say="That is a grey robot.">🔊</button>
 </div>
 <div class="card ex">
-  <div class="scene this"><img class="kid" src="../img/kid-hold.svg" alt=""><img class="obj" src="../img/watch.svg" alt="watch"></div>
-  <div><div class="en">This is a watch.</div><div class="ua">Годинник у мене на руці.</div></div>
-  <button class="say" data-say="This is a watch.">🔊</button>
+  <div class="scene this"><img class="kid" src="../img/kid-hold.svg" alt=""><img class="obj" src="../img/pencil-yellow.svg" alt=""></div>
+  <div><div class="en">This is a yellow pencil.</div><div class="ua">Жовтий олівець у руці.</div></div>
+  <button class="say" data-say="This is a yellow pencil.">🔊</button>
 </div>
 <div class="card ex">
-  <div class="scene that"><img class="kid" src="../img/kid-point.svg" alt=""><span class="dots"></span><img class="obj" src="../img/cake.svg" alt="cake"></div>
-  <div><div class="en">That is a cake.</div><div class="ua">Торт далеко.</div></div>
-  <button class="say" data-say="That is a cake.">🔊</button>
+  <div class="scene that"><img class="kid" src="../img/kid-point.svg" alt=""><span class="dots"></span><img class="obj" src="../img/cake-pink.svg" alt=""></div>
+  <div><div class="en">That is a pink cake.</div><div class="ua">Рожевий торт далеко.</div></div>
+  <button class="say" data-say="That is a pink cake.">🔊</button>
 </div>
 
-<h2>Вправа: This чи That?</h2>
-<p>Подивись на картинку. Рука тримає — <b>This</b>. Палець показує далеко — <b>That</b>.</p>
+<h2>Вправа: This чи That? Який колір?</h2>
+<p>Подивись на картинку. <b>Крок 1:</b> рука тримає — <b>This</b>, палець показує далеко — <b>That</b>. <b>Крок 2:</b> прочитай слова й вибери колір. Коли обидва правильно — почуєш усе речення!</p>
 
 <div class="quiz">
-  <div class="card q" data-answer="This is a pencil.">
-    <div class="scene this"><img class="kid" src="../img/kid-hold.svg" alt=""><img class="obj" src="../img/pencil.svg" alt="pencil"></div>
-    <div class="choices"><button class="choice" data-ok>This</button><button class="choice">That</button></div>
+  <div class="card q" data-answer="This is a yellow pencil.">
+    <div class="scene this"><img class="kid" src="../img/kid-hold.svg" alt=""><img class="obj" src="../img/pencil-yellow.svg" alt=""></div>
+    <div class="steps">
+      <div class="choices"><span class="step">1</span><button class="choice" data-ok>This</button><button class="choice">That</button></div>
+      <div class="choices"><span class="step">2</span><button class="choice" data-ok>yellow</button><button class="choice">green</button><button class="choice">red</button></div>
+    </div>
     <div class="result"></div>
   </div>
-  <div class="card q" data-answer="That is a present.">
-    <div class="scene that"><img class="kid" src="../img/kid-point.svg" alt=""><span class="dots"></span><img class="obj" src="../img/present.svg" alt="present"></div>
-    <div class="choices"><button class="choice">This</button><button class="choice" data-ok>That</button></div>
+  <div class="card q" data-answer="That is a red present.">
+    <div class="scene that"><img class="kid" src="../img/kid-point.svg" alt=""><span class="dots"></span><img class="obj" src="../img/present-red.svg" alt=""></div>
+    <div class="steps">
+      <div class="choices"><span class="step">1</span><button class="choice">This</button><button class="choice" data-ok>That</button></div>
+      <div class="choices"><span class="step">2</span><button class="choice">blue</button><button class="choice" data-ok>red</button><button class="choice">pink</button></div>
+    </div>
     <div class="result"></div>
   </div>
-  <div class="card q" data-answer="That is a ball.">
-    <div class="scene that"><img class="kid" src="../img/kid-point.svg" alt=""><span class="dots"></span><img class="obj" src="../img/ball.svg" alt="ball"></div>
-    <div class="choices"><button class="choice">This</button><button class="choice" data-ok>That</button></div>
+  <div class="card q" data-answer="That is a green ball.">
+    <div class="scene that"><img class="kid" src="../img/kid-point.svg" alt=""><span class="dots"></span><img class="obj" src="../img/ball-green.svg" alt=""></div>
+    <div class="steps">
+      <div class="choices"><span class="step">1</span><button class="choice">This</button><button class="choice" data-ok>That</button></div>
+      <div class="choices"><span class="step">2</span><button class="choice">blue</button><button class="choice">brown</button><button class="choice" data-ok>green</button></div>
+    </div>
     <div class="result"></div>
   </div>
-  <div class="card q" data-answer="This is a robot.">
-    <div class="scene this"><img class="kid" src="../img/kid-hold.svg" alt=""><img class="obj" src="../img/robot.svg" alt="robot"></div>
-    <div class="choices"><button class="choice" data-ok>This</button><button class="choice">That</button></div>
+  <div class="card q" data-answer="This is a grey robot.">
+    <div class="scene this"><img class="kid" src="../img/kid-hold.svg" alt=""><img class="obj" src="../img/robot-grey.svg" alt=""></div>
+    <div class="steps">
+      <div class="choices"><span class="step">1</span><button class="choice" data-ok>This</button><button class="choice">That</button></div>
+      <div class="choices"><span class="step">2</span><button class="choice">black</button><button class="choice" data-ok>grey</button><button class="choice">white</button></div>
+    </div>
     <div class="result"></div>
   </div>
-  <div class="card q" data-answer="That is a car.">
-    <div class="scene that"><img class="kid" src="../img/kid-point.svg" alt=""><span class="dots"></span><img class="obj" src="../img/car.svg" alt="car"></div>
-    <div class="choices"><button class="choice">This</button><button class="choice" data-ok>That</button></div>
+  <div class="card q" data-answer="That is a blue car.">
+    <div class="scene that"><img class="kid" src="../img/kid-point.svg" alt=""><span class="dots"></span><img class="obj" src="../img/car-blue.svg" alt=""></div>
+    <div class="steps">
+      <div class="choices"><span class="step">1</span><button class="choice">This</button><button class="choice" data-ok>That</button></div>
+      <div class="choices"><span class="step">2</span><button class="choice">orange</button><button class="choice" data-ok>blue</button><button class="choice">purple</button></div>
+    </div>
     <div class="result"></div>
   </div>
-  <div class="card q" data-answer="This is a cake.">
-    <div class="scene this"><img class="kid" src="../img/kid-hold.svg" alt=""><img class="obj" src="../img/cake.svg" alt="cake"></div>
-    <div class="choices"><button class="choice" data-ok>This</button><button class="choice">That</button></div>
+  <div class="card q" data-answer="This is a pink cake.">
+    <div class="scene this"><img class="kid" src="../img/kid-hold.svg" alt=""><img class="obj" src="../img/cake-pink.svg" alt=""></div>
+    <div class="steps">
+      <div class="choices"><span class="step">1</span><button class="choice" data-ok>This</button><button class="choice">That</button></div>
+      <div class="choices"><span class="step">2</span><button class="choice" data-ok>pink</button><button class="choice">brown</button><button class="choice">red</button></div>
+    </div>
+    <div class="result"></div>
+  </div>
+  <div class="card q" data-answer="That is a purple book.">
+    <div class="scene that"><img class="kid" src="../img/kid-point.svg" alt=""><span class="dots"></span><img class="obj" src="../img/book-purple.svg" alt=""></div>
+    <div class="steps">
+      <div class="choices"><span class="step">1</span><button class="choice">This</button><button class="choice" data-ok>That</button></div>
+      <div class="choices"><span class="step">2</span><button class="choice" data-ok>purple</button><button class="choice">yellow</button><button class="choice">black</button></div>
+    </div>
+    <div class="result"></div>
+  </div>
+  <div class="card q" data-answer="This is a orange ball.">
+    <div class="scene this"><img class="kid" src="../img/kid-hold.svg" alt=""><img class="obj" src="../img/ball-orange.svg" alt=""></div>
+    <div class="steps">
+      <div class="choices"><span class="step">1</span><button class="choice" data-ok>This</button><button class="choice">That</button></div>
+      <div class="choices"><span class="step">2</span><button class="choice">red</button><button class="choice" data-ok>orange</button><button class="choice">green</button></div>
+    </div>
     <div class="result"></div>
   </div>
   <p class="score"></p>
@@ -93,13 +127,17 @@
 <div class="card">
   <p><b>Грайте разом із дорослим.</b></p>
   <ol>
-    <li>Візьми в руку свою іграшку чи олівець і скажи: <b>This is a…</b> (<i>This is a pencil.</i>)</li>
-    <li>Покажи пальцем на щось далеко в кімнаті й скажи: <b>That is a…</b> (<i>That is a chair.</i>)</li>
+    <li>Візьми в руку свою іграшку чи олівець і скажи, якого він кольору: <b>This is a…</b> (<i>This is a green pencil.</i>)</li>
+    <li>Покажи пальцем на щось далеко в кімнаті й скажи: <b>That is a…</b> (<i>That is a brown chair.</i>)</li>
     <li>Тепер дорослий торкається або показує, а ти кажеш речення. Хто зробить 5 речень без помилки?</li>
   </ol>
 </div>
 
 <h2>Слова, які ми вже знаємо</h2>
+<ul class="words">
+  <li>red</li><li>blue</li><li>green</li><li>yellow</li><li>pink</li><li>orange</li>
+  <li>purple</li><li>brown</li><li>grey</li><li>black</li><li>white</li>
+</ul>
 <ul class="words">
   <li>robot</li><li>cake</li><li>present</li><li>watch</li><li>book</li><li>pen</li><li>pencil</li>
   <li>rubber</li><li>bag</li><li>chair</li><li>ball</li><li>doll</li><li>car</li>

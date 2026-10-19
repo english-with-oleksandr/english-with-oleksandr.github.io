@@ -19,22 +19,31 @@ document.querySelectorAll('.quiz').forEach(quiz => {
   let solved = 0;
   qs.forEach(q => {
     const result = q.querySelector('.result');
-    q.querySelectorAll('.choice').forEach(c => {
-      c.addEventListener('click', () => {
-        if(q.dataset.done) return;
-        if(c.dataset.ok !== undefined){
+    const groups = [...q.querySelectorAll('.choices')];
+    groups.forEach(g => {
+      g.querySelectorAll('.choice').forEach(c => {
+        c.addEventListener('click', () => {
+          if(q.dataset.done || g.dataset.done) return;
+          if(c.dataset.ok === undefined){
+            c.classList.add('wrong');
+            result.textContent = 'Спробуй ще раз 🙂';
+            result.className = 'result bad';
+            return;
+          }
           c.classList.add('right');
-          result.textContent = '✅ ' + q.dataset.answer;
-          result.className = 'result ok';
+          g.dataset.done = '1';
+          if(!groups.every(x => x.dataset.done)){
+            result.textContent = 'Так! А тепер наступний крок 👉';
+            result.className = 'result ok';
+            return;
+          }
           q.dataset.done = '1';
           solved++;
+          result.textContent = '✅ ' + q.dataset.answer;
+          result.className = 'result ok';
           speak(q.dataset.answer);
           if(score) score.textContent = solved === qs.length ? '🎉 Молодець! Усі ' + qs.length + ' правильно!' : 'Правильно: ' + solved + ' з ' + qs.length;
-        } else {
-          c.classList.add('wrong');
-          result.textContent = 'Спробуй ще раз 🙂';
-          result.className = 'result bad';
-        }
+        });
       });
     });
   });

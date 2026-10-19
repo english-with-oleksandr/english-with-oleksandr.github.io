@@ -168,7 +168,40 @@ def objects():
         '<rect x="26" y="64" width="8" height="30" fill="#9a5f2c"/><rect x="70" y="64" width="8" height="30" fill="#9a5f2c"/>')
 
 
+COLOURS = {
+    'red': '#e74c3c', 'blue': '#3498db', 'green': '#58b947', 'yellow': '#f4d03f',
+    'pink': '#f5a3c7', 'orange': '#f39c12', 'purple': '#9b59b6', 'brown': '#a0522d',
+    'grey': '#95a5a6', 'black': '#3b3a40', 'white': '#f8f8f8',
+}
+
+MAIN = {
+    'book': ['#e74c3c', '#c0392b'],
+    'present': ['#e74c3c', '#c0392b'],
+    'car': ['#e74c3c'],
+    'ball': ['#3498db'],
+    'pencil': ['#f4d03f'],
+    'cake': ['#f5b7d2'],
+    'robot': ['#95a5a6', '#bdc3c7'],
+}
+
+
+def shade(hex_, k):
+    r, g, b = (int(hex_[i:i + 2], 16) for i in (1, 3, 5))
+    return '#%02x%02x%02x' % tuple(max(0, min(255, int(c * k))) for c in (r, g, b))
+
+
+def recolour():
+    for obj, olds in MAIN.items():
+        base = open(os.path.join(OUT, obj + '.svg')).read()
+        for name, hex_ in COLOURS.items():
+            s = base
+            for i, old in enumerate(olds):
+                s = s.replace('fill="%s"' % old, 'fill="%s"' % (hex_ if i == 0 else shade(hex_, 0.82 if obj != 'robot' else 1.15)))
+            with open(os.path.join(OUT, '%s-%s.svg' % (obj, name)), 'w') as f:
+                f.write(s)
+
+
 if __name__ == '__main__':
     os.makedirs(OUT, exist_ok=True)
-    kid_hold(); kid_point(); kid_up(); kid_sit(); objects()
-    print(sorted(os.listdir(OUT)))
+    kid_hold(); kid_point(); kid_up(); kid_sit(); objects(); recolour()
+    print(len(os.listdir(OUT)), 'files')

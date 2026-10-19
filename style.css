@@ -120,3 +120,11 @@ footer{color:var(--muted);font-size:14px;margin-top:40px}
   .scene{--h:84px}
 }
 .quiz .scene{--h:112px}
+.steps{display:flex;flex-direction:column;gap:8px;margin-left:auto}
+.steps .choices{margin-left:0;flex-wrap:wrap;align-items:center}
+.step{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--card);font-size:14px;font-weight:700}
+@media (max-width:480px){.steps{margin-left:0;width:100%}}
+.quiz .q:has(.steps){display:grid;grid-template-columns:auto 1fr;align-items:center}
+.quiz .q:has(.steps) .steps{margin-left:0;justify-self:end}
+.quiz .q:has(.steps) .result{grid-column:1/-1}
+@media (max-width:480px){.quiz .q:has(.steps){grid-template-columns:1fr}.quiz .q:has(.steps) .steps{justify-self:start}}
