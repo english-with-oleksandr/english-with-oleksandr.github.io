@@ -18,44 +18,45 @@
 <p>Натисни 🔊, повтори вголос і покажи дію.</p>
 
 <div class="card ex">
-  <div class="pic"><img class="icon" src="../img/frog.svg" alt="frog"></div>
-  <div><div class="en">a frog</div><div class="ua">жаба</div></div>
-  <button class="say" data-say="a frog">🔊</button>
+  <img class="icon" src="../img/frog.svg" alt="">
+  <div class="text"><div class="en" lang="en">a frog</div><div class="ua">жаба</div></div>
+  <button class="say" aria-label="Послухати" data-say="a frog">🔊</button>
 </div>
 <div class="card ex">
-  <div class="pic"><img class="icon" src="../img/teacher.svg" alt="teacher"></div>
-  <div><div class="en">a teacher</div><div class="ua">учитель, учителька</div></div>
-  <button class="say" data-say="a teacher">🔊</button>
+  <img class="icon" src="../img/teacher.svg" alt="">
+  <div class="text"><div class="en" lang="en">a teacher</div><div class="ua">учитель, учителька</div></div>
+  <button class="say" aria-label="Послухати" data-say="a teacher">🔊</button>
 </div>
 <div class="card ex">
-  <div class="pic"><img class="icon" src="../img/door-open.svg" alt="door-open"></div>
-  <div><div class="en">Open the door!</div><div class="ua">Відчини двері! Жест: долоні розходяться, як дві стулки.</div></div>
-  <button class="say" data-say="Open the door!">🔊</button>
+  <img class="icon" src="../img/door-open.svg" alt="">
+  <div class="text"><div class="en" lang="en">Open the door!</div><div class="ua">Відчини двері! Жест: долоні розходяться, як дві стулки.</div></div>
+  <button class="say" aria-label="Послухати" data-say="Open the door!">🔊</button>
 </div>
 <div class="card ex">
-  <div class="pic"><img class="icon" src="../img/window-close.svg" alt="window-close"></div>
-  <div><div class="en">Close the window!</div><div class="ua">Зачини вікно! Жест: долоні сходяться.</div></div>
-  <button class="say" data-say="Close the window!">🔊</button>
+  <img class="icon" src="../img/window-close.svg" alt="">
+  <div class="text"><div class="en" lang="en">Close the window!</div><div class="ua">Зачини вікно! Жест: долоні сходяться.</div></div>
+  <button class="say" aria-label="Послухати" data-say="Close the window!">🔊</button>
 </div>
 <div class="card ex">
-  <div class="pic"><img class="icon" src="../img/stand-up.svg" alt="stand-up"></div>
-  <div><div class="en">Stand up!</div><div class="ua">Встань!</div></div>
-  <button class="say" data-say="Stand up!">🔊</button>
+  <img class="icon" src="../img/stand-up.svg" alt="">
+  <div class="text"><div class="en" lang="en">Stand up!</div><div class="ua">Встань!</div></div>
+  <button class="say" aria-label="Послухати" data-say="Stand up!">🔊</button>
 </div>
 <div class="card ex">
-  <div class="pic"><img class="icon" src="../img/sit-down.svg" alt="sit-down"></div>
-  <div><div class="en">Sit down, please.</div><div class="ua">Сідай, будь ласка.</div></div>
-  <button class="say" data-say="Sit down, please.">🔊</button>
+  <img class="icon" src="../img/sit-down.svg" alt="">
+  <div class="text"><div class="en" lang="en">Sit down, please.</div><div class="ua">Сідай, будь ласка.</div></div>
+  <button class="say" aria-label="Послухати" data-say="Sit down, please.">🔊</button>
 </div>
 
+<h2>Open і close</h2>
 <div class="rule">
-  <div class="card this">
-    <b class="word">open</b>
+  <div class="card neutral big">
+    <b class="word" lang="en">open</b>
     <div class="pic"><img class="icon" src="../img/door-open.svg" alt=""></div>
     відчинити: двері, вікно, книжку
   </div>
-  <div class="card that">
-    <b class="word">close</b>
+  <div class="card neutral big">
+    <b class="word" lang="en">close</b>
     <div class="pic"><img class="icon" src="../img/window-close.svg" alt=""></div>
     зачинити, закрити: двері, вікно, очі
   </div>
@@ -66,33 +67,39 @@
 
 <div class="quiz">
   <div class="card q" data-answer="Stand up!">
-    <button class="say" data-say="Stand up!">🔊 Слухай</button>
-    <div class="choices"><button class="choice pick"><img src="../img/sit-down.svg" alt="sit-down"></button><button class="choice pick" data-ok><img src="../img/stand-up.svg" alt="stand-up"></button><button class="choice pick"><img src="../img/door-open.svg" alt="door-open"></button></div>
+    <button class="say" aria-label="Послухати" data-say="Stand up!">🔊 Слухай</button>
+    <button class="peek">👀 Показати слова</button><div class="hint" lang="en" hidden>Stand up!</div>
+    <div class="choices"><button class="choice pick"><img src="../img/sit-down.svg" alt="Sit down"></button><button class="choice pick" data-ok><img src="../img/stand-up.svg" alt="Stand up"></button><button class="choice pick"><img src="../img/door-open.svg" alt="Open the door"></button></div>
     <div class="result"></div>
   </div>
   <div class="card q" data-answer="Open the door!">
-    <button class="say" data-say="Open the door!">🔊 Слухай</button>
-    <div class="choices"><button class="choice pick"><img src="../img/window-close.svg" alt="window-close"></button><button class="choice pick"><img src="../img/frog.svg" alt="frog"></button><button class="choice pick" data-ok><img src="../img/door-open.svg" alt="door-open"></button></div>
+    <button class="say" aria-label="Послухати" data-say="Open the door!">🔊 Слухай</button>
+    <button class="peek">👀 Показати слова</button><div class="hint" lang="en" hidden>Open the door!</div>
+    <div class="choices"><button class="choice pick"><img src="../img/window-close.svg" alt="Close the window"></button><button class="choice pick"><img src="../img/frog.svg" alt="a frog"></button><button class="choice pick" data-ok><img src="../img/door-open.svg" alt="Open the door"></button></div>
     <div class="result"></div>
   </div>
   <div class="card q" data-answer="A frog!">
-    <button class="say" data-say="A frog!">🔊 Слухай</button>
-    <div class="choices"><button class="choice pick" data-ok><img src="../img/frog.svg" alt="frog"></button><button class="choice pick"><img src="../img/teacher.svg" alt="teacher"></button><button class="choice pick"><img src="../img/sit-down.svg" alt="sit-down"></button></div>
+    <button class="say" aria-label="Послухати" data-say="A frog!">🔊 Слухай</button>
+    <button class="peek">👀 Показати слова</button><div class="hint" lang="en" hidden>A frog!</div>
+    <div class="choices"><button class="choice pick" data-ok><img src="../img/frog.svg" alt="a frog"></button><button class="choice pick"><img src="../img/teacher.svg" alt="a teacher"></button><button class="choice pick"><img src="../img/sit-down.svg" alt="Sit down"></button></div>
     <div class="result"></div>
   </div>
   <div class="card q" data-answer="Close the window!">
-    <button class="say" data-say="Close the window!">🔊 Слухай</button>
-    <div class="choices"><button class="choice pick"><img src="../img/door-open.svg" alt="door-open"></button><button class="choice pick" data-ok><img src="../img/window-close.svg" alt="window-close"></button><button class="choice pick"><img src="../img/stand-up.svg" alt="stand-up"></button></div>
+    <button class="say" aria-label="Послухати" data-say="Close the window!">🔊 Слухай</button>
+    <button class="peek">👀 Показати слова</button><div class="hint" lang="en" hidden>Close the window!</div>
+    <div class="choices"><button class="choice pick"><img src="../img/door-open.svg" alt="Open the door"></button><button class="choice pick" data-ok><img src="../img/window-close.svg" alt="Close the window"></button><button class="choice pick"><img src="../img/stand-up.svg" alt="Stand up"></button></div>
     <div class="result"></div>
   </div>
   <div class="card q" data-answer="Sit down, please.">
-    <button class="say" data-say="Sit down, please.">🔊 Слухай</button>
-    <div class="choices"><button class="choice pick"><img src="../img/stand-up.svg" alt="stand-up"></button><button class="choice pick"><img src="../img/frog.svg" alt="frog"></button><button class="choice pick" data-ok><img src="../img/sit-down.svg" alt="sit-down"></button></div>
+    <button class="say" aria-label="Послухати" data-say="Sit down, please.">🔊 Слухай</button>
+    <button class="peek">👀 Показати слова</button><div class="hint" lang="en" hidden>Sit down, please.</div>
+    <div class="choices"><button class="choice pick"><img src="../img/stand-up.svg" alt="Stand up"></button><button class="choice pick"><img src="../img/frog.svg" alt="a frog"></button><button class="choice pick" data-ok><img src="../img/sit-down.svg" alt="Sit down"></button></div>
     <div class="result"></div>
   </div>
   <div class="card q" data-answer="A teacher!">
-    <button class="say" data-say="A teacher!">🔊 Слухай</button>
-    <div class="choices"><button class="choice pick"><img src="../img/door-open.svg" alt="door-open"></button><button class="choice pick" data-ok><img src="../img/teacher.svg" alt="teacher"></button><button class="choice pick"><img src="../img/frog.svg" alt="frog"></button></div>
+    <button class="say" aria-label="Послухати" data-say="A teacher!">🔊 Слухай</button>
+    <button class="peek">👀 Показати слова</button><div class="hint" lang="en" hidden>A teacher!</div>
+    <div class="choices"><button class="choice pick"><img src="../img/door-open.svg" alt="Open the door"></button><button class="choice pick" data-ok><img src="../img/teacher.svg" alt="a teacher"></button><button class="choice pick"><img src="../img/frog.svg" alt="a frog"></button></div>
     <div class="result"></div>
   </div>
   <p class="score"></p>
@@ -102,14 +109,14 @@
 <div class="card">
   <p><b>Грайте разом із дорослим.</b> Дорослий дає команди англійською. Виконуй <b>тільки тоді</b>, коли чуєш <b>please</b>!</p>
   <ul>
-    <li><i>Please, stand up.</i> → встаєш</li>
-    <li><i>Sit down!</i> → не рухаєшся, бо немає <b>please</b> 🧊</li>
-    <li><i>Please, open the door.</i> → показуєш жест «відчинити»</li>
+    <li><i lang="en">Stand up, please.</i> → встаєш</li>
+    <li><i lang="en">Sit down!</i> → не рухаєшся, бо немає <b>please</b> 🧊</li>
+    <li><i lang="en">Open the door, please.</i> → показуєш жест «відчинити»</li>
   </ul>
   <p>Потім поміняйтеся: тепер команди даєш ти!</p>
 </div>
 
-<footer>Для батьків: 🔊 читає вбудований голос телефона чи комп'ютера. Якщо звуку немає — прочитайте команди разом із дитиною.</footer>
+<footer>Для батьків: 🔊 — запис британської вимови. Натисніть і повторіть разом із дитиною.</footer>
 </main>
 <script src="../site.js"></script>
 </body>

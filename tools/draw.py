@@ -50,6 +50,10 @@ def kid_hold():
         f'<circle cx="73" cy="100" r="6" fill="{SKIN}"/>'
     )
     svg('kid-hold', 120, 160, legs() + shirt() + arms + head())
+    svg('kid-hands', 120, 160,
+        f'<path d="M40 86 Q34 96 46 100" fill="none" stroke="{SHIRT}" stroke-width="11"/>'
+        f'<path d="M80 86 Q86 96 74 100" fill="none" stroke="{SHIRT}" stroke-width="11"/>'
+        f'<circle cx="45" cy="99" r="7" fill="{SKIN}"/><circle cx="75" cy="99" r="7" fill="{SKIN}"/>')
 
 
 def kid_point():
@@ -162,46 +166,24 @@ def objects():
         '<path d="M60 10 V90 M16 50 H104" fill="none"/>'
         '<rect x="10" y="88" width="100" height="10" rx="2" fill="#c68642"/>'
         '<path d="M4 50 H30 M22 42 L30 50 L22 58 M116 50 H90 M98 42 L90 50 L98 58" fill="none" stroke="#e67e22" stroke-width="5"/>')
+    svg('doll', 100, 120,
+        '<path d="M30 62 Q50 54 70 62 L82 108 H18 Z" fill="#9b59b6"/>'
+        '<path d="M30 62 L70 62" fill="none"/>'
+        '<path d="M28 34 Q26 8 50 8 Q74 8 72 34 Q80 50 74 58 Q66 46 66 34 H34 Q34 46 26 58 Q20 50 28 34Z" fill="#f4d03f"/>'
+        f'<circle cx="50" cy="36" r="18" fill="{SKIN}"/>'
+        '<path d="M32 30 Q50 16 68 30 Q58 22 50 22 Q42 22 32 30Z" fill="#f4d03f"/>'
+        '<circle cx="43" cy="37" r="2.5" fill="#2b2b33" stroke="none"/><circle cx="57" cy="37" r="2.5" fill="#2b2b33" stroke="none"/>'
+        '<path d="M44 45 Q50 50 56 45" fill="none"/>'
+        '<circle cx="37" cy="43" r="3" fill="#f19a8a" stroke="none" opacity=".7"/><circle cx="63" cy="43" r="3" fill="#f19a8a" stroke="none" opacity=".7"/>'
+        f'<rect x="36" y="106" width="9" height="10" rx="2" fill="{SKIN}"/><rect x="55" y="106" width="9" height="10" rx="2" fill="{SKIN}"/>'
+        '<path d="M30 64 L20 86 M70 64 L80 86" fill="none" stroke="#9b59b6" stroke-width="8"/>')
     svg('chair', 100, 100,
         '<rect x="24" y="8" width="10" height="56" rx="3" fill="#b9773b"/>'
         '<rect x="24" y="54" width="56" height="10" rx="3" fill="#b9773b"/>'
         '<rect x="26" y="64" width="8" height="30" fill="#9a5f2c"/><rect x="70" y="64" width="8" height="30" fill="#9a5f2c"/>')
 
 
-COLOURS = {
-    'red': '#e74c3c', 'blue': '#3498db', 'green': '#58b947', 'yellow': '#f4d03f',
-    'pink': '#f5a3c7', 'orange': '#f39c12', 'purple': '#9b59b6', 'brown': '#a0522d',
-    'grey': '#95a5a6', 'black': '#3b3a40', 'white': '#f8f8f8',
-}
-
-MAIN = {
-    'book': ['#e74c3c', '#c0392b'],
-    'present': ['#e74c3c', '#c0392b'],
-    'car': ['#e74c3c'],
-    'ball': ['#3498db'],
-    'pencil': ['#f4d03f'],
-    'cake': ['#f5b7d2'],
-    'robot': ['#95a5a6', '#bdc3c7'],
-}
-
-
-def shade(hex_, k):
-    r, g, b = (int(hex_[i:i + 2], 16) for i in (1, 3, 5))
-    return '#%02x%02x%02x' % tuple(max(0, min(255, int(c * k))) for c in (r, g, b))
-
-
-def recolour():
-    for obj, olds in MAIN.items():
-        base = open(os.path.join(OUT, obj + '.svg')).read()
-        for name, hex_ in COLOURS.items():
-            s = base
-            for i, old in enumerate(olds):
-                s = s.replace('fill="%s"' % old, 'fill="%s"' % (hex_ if i == 0 else shade(hex_, 0.82 if obj != 'robot' else 1.15)))
-            with open(os.path.join(OUT, '%s-%s.svg' % (obj, name)), 'w') as f:
-                f.write(s)
-
-
 if __name__ == '__main__':
     os.makedirs(OUT, exist_ok=True)
-    kid_hold(); kid_point(); kid_up(); kid_sit(); objects(); recolour()
+    kid_hold(); kid_point(); kid_up(); kid_sit(); objects()
     print(len(os.listdir(OUT)), 'files')
