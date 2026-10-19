@@ -142,3 +142,6 @@ footer{color:var(--muted);font-size:14px;margin-top:40px}
 .frogs{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:260px;min-height:96px;align-content:center}
 .frogs img{width:52px;height:52px}
 @media (prefers-color-scheme: dark){.frogs{background:#fffaf0;border-radius:10px;padding:8px}}
+.icon.art{height:120px;border-radius:12px}
+.choice.pick img[src*="/art/"]{height:72px;border-radius:8px}
+.frogs img[src*="/art/"]{width:56px;height:56px}
