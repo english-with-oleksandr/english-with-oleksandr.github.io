@@ -18,32 +18,32 @@
 <p>Натисни 🔊, повтори вголос і покажи дію.</p>
 
 <div class="card ex">
-  <div class="pic">🐸</div>
+  <div class="pic"><img class="icon" src="../img/frog.svg" alt="frog"></div>
   <div><div class="en">a frog</div><div class="ua">жаба</div></div>
   <button class="say" data-say="a frog">🔊</button>
 </div>
 <div class="card ex">
-  <div class="pic">🧑‍🏫</div>
+  <div class="pic"><img class="icon" src="../img/teacher.svg" alt="teacher"></div>
   <div><div class="en">a teacher</div><div class="ua">учитель, учителька</div></div>
   <button class="say" data-say="a teacher">🔊</button>
 </div>
 <div class="card ex">
-  <div class="pic">🚪</div>
+  <div class="pic"><img class="icon" src="../img/door-open.svg" alt="door-open"></div>
   <div><div class="en">Open the door!</div><div class="ua">Відчини двері! Жест: долоні розходяться, як дві стулки.</div></div>
   <button class="say" data-say="Open the door!">🔊</button>
 </div>
 <div class="card ex">
-  <div class="pic">🪟</div>
+  <div class="pic"><img class="icon" src="../img/window-close.svg" alt="window-close"></div>
   <div><div class="en">Close the window!</div><div class="ua">Зачини вікно! Жест: долоні сходяться.</div></div>
   <button class="say" data-say="Close the window!">🔊</button>
 </div>
 <div class="card ex">
-  <div class="pic">🧍</div>
+  <div class="pic"><img class="icon" src="../img/stand-up.svg" alt="stand-up"></div>
   <div><div class="en">Stand up!</div><div class="ua">Встань!</div></div>
   <button class="say" data-say="Stand up!">🔊</button>
 </div>
 <div class="card ex">
-  <div class="pic">🪑</div>
+  <div class="pic"><img class="icon" src="../img/sit-down.svg" alt="sit-down"></div>
   <div><div class="en">Sit down, please.</div><div class="ua">Сідай, будь ласка.</div></div>
   <button class="say" data-say="Sit down, please.">🔊</button>
 </div>
@@ -51,12 +51,12 @@
 <div class="rule">
   <div class="card this">
     <b class="word">open</b>
-    <div class="pic">👐</div>
+    <div class="pic"><img class="icon" src="../img/door-open.svg" alt=""></div>
     відчинити: двері, вікно, книжку
   </div>
   <div class="card that">
     <b class="word">close</b>
-    <div class="pic">🙌</div>
+    <div class="pic"><img class="icon" src="../img/window-close.svg" alt=""></div>
     зачинити, закрити: двері, вікно, очі
   </div>
 </div>
@@ -67,32 +67,32 @@
 <div class="quiz">
   <div class="card q" data-answer="Stand up!">
     <button class="say" data-say="Stand up!">🔊 Слухай</button>
-    <div class="choices"><button class="choice pick">🪑</button><button class="choice pick" data-ok>🧍</button><button class="choice pick">🚪</button></div>
+    <div class="choices"><button class="choice pick"><img src="../img/sit-down.svg" alt="sit-down"></button><button class="choice pick" data-ok><img src="../img/stand-up.svg" alt="stand-up"></button><button class="choice pick"><img src="../img/door-open.svg" alt="door-open"></button></div>
     <div class="result"></div>
   </div>
   <div class="card q" data-answer="Open the door!">
     <button class="say" data-say="Open the door!">🔊 Слухай</button>
-    <div class="choices"><button class="choice pick">🪟</button><button class="choice pick">🐸</button><button class="choice pick" data-ok>🚪</button></div>
+    <div class="choices"><button class="choice pick"><img src="../img/window-close.svg" alt="window-close"></button><button class="choice pick"><img src="../img/frog.svg" alt="frog"></button><button class="choice pick" data-ok><img src="../img/door-open.svg" alt="door-open"></button></div>
     <div class="result"></div>
   </div>
   <div class="card q" data-answer="A frog!">
     <button class="say" data-say="A frog!">🔊 Слухай</button>
-    <div class="choices"><button class="choice pick" data-ok>🐸</button><button class="choice pick">🧑‍🏫</button><button class="choice pick">🪑</button></div>
+    <div class="choices"><button class="choice pick" data-ok><img src="../img/frog.svg" alt="frog"></button><button class="choice pick"><img src="../img/teacher.svg" alt="teacher"></button><button class="choice pick"><img src="../img/sit-down.svg" alt="sit-down"></button></div>
     <div class="result"></div>
   </div>
   <div class="card q" data-answer="Close the window!">
     <button class="say" data-say="Close the window!">🔊 Слухай</button>
-    <div class="choices"><button class="choice pick">🚪</button><button class="choice pick" data-ok>🪟</button><button class="choice pick">🧍</button></div>
+    <div class="choices"><button class="choice pick"><img src="../img/door-open.svg" alt="door-open"></button><button class="choice pick" data-ok><img src="../img/window-close.svg" alt="window-close"></button><button class="choice pick"><img src="../img/stand-up.svg" alt="stand-up"></button></div>
     <div class="result"></div>
   </div>
   <div class="card q" data-answer="Sit down, please.">
     <button class="say" data-say="Sit down, please.">🔊 Слухай</button>
-    <div class="choices"><button class="choice pick">🧍</button><button class="choice pick">🐸</button><button class="choice pick" data-ok>🪑</button></div>
+    <div class="choices"><button class="choice pick"><img src="../img/stand-up.svg" alt="stand-up"></button><button class="choice pick"><img src="../img/frog.svg" alt="frog"></button><button class="choice pick" data-ok><img src="../img/sit-down.svg" alt="sit-down"></button></div>
     <div class="result"></div>
   </div>
   <div class="card q" data-answer="A teacher!">
     <button class="say" data-say="A teacher!">🔊 Слухай</button>
-    <div class="choices"><button class="choice pick">🚪</button><button class="choice pick" data-ok>🧑‍🏫</button><button class="choice pick">🐸</button></div>
+    <div class="choices"><button class="choice pick"><img src="../img/door-open.svg" alt="door-open"></button><button class="choice pick" data-ok><img src="../img/teacher.svg" alt="teacher"></button><button class="choice pick"><img src="../img/frog.svg" alt="frog"></button></div>
     <div class="result"></div>
   </div>
   <p class="score"></p>

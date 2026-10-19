@@ -104,3 +104,19 @@ footer{color:var(--muted);font-size:14px;margin-top:40px}
 }
 .choice.pick{font-size:30px;padding:4px 10px;line-height:1.2}
 .quiz .say{margin-left:0;font-size:22px}
+.scene{--h:96px;position:relative;display:flex;align-items:flex-start;flex:none}
+.scene .kid{height:var(--h);width:auto}
+.scene .obj{width:calc(var(--h)*.42);height:calc(var(--h)*.42)}
+.scene.this{width:calc(var(--h)*.75)}
+.scene.this .obj{position:absolute;left:calc(var(--h)*.165);top:calc(var(--h)*.36)}
+.scene.that .dots{width:calc(var(--h)*.3);margin-top:calc(var(--h)*.41);border-top:3px dotted var(--muted)}
+.scene.that .obj{margin-top:calc(var(--h)*.2)}
+.card.big .scene{--h:130px;margin:8px 0}
+.ex .scene,.quiz .scene{margin:0}
+.icon{height:72px;width:auto}
+.choice.pick img{height:52px;width:auto;display:block}
+@media (max-width:480px){
+  .ex{flex-wrap:wrap}
+  .scene{--h:84px}
+}
+.quiz .scene{--h:112px}
