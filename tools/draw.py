@@ -177,6 +177,21 @@ def objects():
         '<circle cx="37" cy="43" r="3" fill="#f19a8a" stroke="none" opacity=".7"/><circle cx="63" cy="43" r="3" fill="#f19a8a" stroke="none" opacity=".7"/>'
         f'<rect x="36" y="106" width="9" height="10" rx="2" fill="{SKIN}"/><rect x="55" y="106" width="9" height="10" rx="2" fill="{SKIN}"/>'
         '<path d="M30 64 L20 86 M70 64 L80 86" fill="none" stroke="#9b59b6" stroke-width="8"/>')
+    svg('bag', 100, 100,
+        '<path d="M34 30 Q34 12 50 12 Q66 12 66 30" fill="none" stroke-width="5"/>'
+        '<rect x="18" y="28" width="64" height="62" rx="12" fill="#e67e22"/>'
+        '<rect x="28" y="54" width="44" height="26" rx="6" fill="#d35400"/>'
+        '<path d="M28 62 H72" fill="none"/>'
+        '<circle cx="50" cy="44" r="4" fill="#f4d03f"/>')
+    svg('door', 100, 120,
+        '<rect x="22" y="8" width="56" height="104" rx="3" fill="#c68642"/>'
+        '<rect x="30" y="18" width="40" height="34" rx="2" fill="#b07434"/>'
+        '<rect x="30" y="62" width="40" height="40" rx="2" fill="#b07434"/>'
+        '<circle cx="68" cy="60" r="4" fill="#f4d03f"/>')
+    svg('window', 120, 110,
+        '<rect x="16" y="10" width="88" height="80" rx="3" fill="#aed6f1"/>'
+        '<path d="M60 10 V90 M16 50 H104" fill="none"/>'
+        '<rect x="10" y="88" width="100" height="10" rx="2" fill="#c68642"/>')
     svg('chair', 100, 100,
         '<rect x="24" y="8" width="10" height="56" rx="3" fill="#b9773b"/>'
         '<rect x="24" y="54" width="56" height="10" rx="3" fill="#b9773b"/>'

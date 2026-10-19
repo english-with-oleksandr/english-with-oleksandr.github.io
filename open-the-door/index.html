@@ -62,7 +62,7 @@
   </div>
 </div>
 
-<h2>Вправа: послухай і вибери</h2>
+<h2>Завдання 1. Послухай і вибери</h2>
 <p>Натисни 🔊, послухай і вибери картинку.</p>
 
 <div class="quiz">
@@ -100,6 +100,90 @@
     <button class="say" aria-label="Послухати" data-say="A teacher!">🔊 Слухай</button>
     <button class="peek">👀 Показати слова</button><div class="hint" lang="en" hidden>A teacher!</div>
     <div class="choices"><button class="choice pick"><img src="../img/door-open.svg" alt="Open the door"></button><button class="choice pick" data-ok><img src="../img/teacher.svg" alt="a teacher"></button><button class="choice pick"><img src="../img/frog.svg" alt="a frog"></button></div>
+    <div class="result"></div>
+  </div>
+  <p class="score"></p>
+</div>
+
+<h2>Завдання 2. Повтори слова</h2>
+<p>Подивись на картинку, прочитай слова й вибери правильне. Коли вгадаєш — почуєш, як воно звучить.</p>
+
+<div class="quiz">
+  <div class="card q vocab" data-answer="a frog">
+    <img class="icon" src="../img/frog.svg" alt="">
+    <div class="choices"><button class="choice word" lang="en" data-ok>frog</button><button class="choice word" lang="en">teacher</button><button class="choice word" lang="en">door</button></div>
+    <div class="result"></div>
+  </div>
+  <div class="card q vocab" data-answer="a door">
+    <img class="icon" src="../img/door.svg" alt="">
+    <div class="choices"><button class="choice word" lang="en">window</button><button class="choice word" lang="en" data-ok>door</button><button class="choice word" lang="en">chair</button></div>
+    <div class="result"></div>
+  </div>
+  <div class="card q vocab" data-answer="a teacher">
+    <img class="icon" src="../img/teacher.svg" alt="">
+    <div class="choices"><button class="choice word" lang="en">bag</button><button class="choice word" lang="en">frog</button><button class="choice word" lang="en" data-ok>teacher</button></div>
+    <div class="result"></div>
+  </div>
+  <div class="card q vocab" data-answer="a window">
+    <img class="icon" src="../img/window.svg" alt="">
+    <div class="choices"><button class="choice word" lang="en" data-ok>window</button><button class="choice word" lang="en">book</button><button class="choice word" lang="en">door</button></div>
+    <div class="result"></div>
+  </div>
+  <div class="card q vocab" data-answer="a pencil">
+    <img class="icon" src="../img/pencil.svg" alt="">
+    <div class="choices"><button class="choice word" lang="en">chair</button><button class="choice word" lang="en" data-ok>pencil</button><button class="choice word" lang="en">bag</button></div>
+    <div class="result"></div>
+  </div>
+  <div class="card q vocab" data-answer="a chair">
+    <img class="icon" src="../img/chair.svg" alt="">
+    <div class="choices"><button class="choice word" lang="en" data-ok>chair</button><button class="choice word" lang="en">frog</button><button class="choice word" lang="en">pencil</button></div>
+    <div class="result"></div>
+  </div>
+  <div class="card q vocab" data-answer="a bag">
+    <img class="icon" src="../img/bag.svg" alt="">
+    <div class="choices"><button class="choice word" lang="en">book</button><button class="choice word" lang="en" data-ok>bag</button><button class="choice word" lang="en">window</button></div>
+    <div class="result"></div>
+  </div>
+  <div class="card q vocab" data-answer="a book">
+    <img class="icon" src="../img/book.svg" alt="">
+    <div class="choices"><button class="choice word" lang="en">teacher</button><button class="choice word" lang="en">pencil</button><button class="choice word" lang="en" data-ok>book</button></div>
+    <div class="result"></div>
+  </div>
+  <p class="score"></p>
+</div>
+
+<h2>Завдання 3. Скільки жаб?</h2>
+<p>Порахуй жаб англійською — <i lang="en">one, two, three…</i> — і вибери число.</p>
+
+<div class="quiz">
+  <div class="card q count" data-answer="four frogs">
+    <div class="frogs"><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""></div>
+    <div class="choices"><button class="choice word" lang="en">three</button><button class="choice word" lang="en" data-ok>four</button><button class="choice word" lang="en">five</button></div>
+    <div class="result"></div>
+  </div>
+  <div class="card q count" data-answer="six frogs">
+    <div class="frogs"><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""></div>
+    <div class="choices"><button class="choice word" lang="en" data-ok>six</button><button class="choice word" lang="en">eight</button><button class="choice word" lang="en">nine</button></div>
+    <div class="result"></div>
+  </div>
+  <div class="card q count" data-answer="eight frogs">
+    <div class="frogs"><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""></div>
+    <div class="choices"><button class="choice word" lang="en">six</button><button class="choice word" lang="en">seven</button><button class="choice word" lang="en" data-ok>eight</button></div>
+    <div class="result"></div>
+  </div>
+  <div class="card q count" data-answer="three frogs">
+    <div class="frogs"><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""></div>
+    <div class="choices"><button class="choice word" lang="en">two</button><button class="choice word" lang="en" data-ok>three</button><button class="choice word" lang="en">five</button></div>
+    <div class="result"></div>
+  </div>
+  <div class="card q count" data-answer="seven frogs">
+    <div class="frogs"><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""></div>
+    <div class="choices"><button class="choice word" lang="en" data-ok>seven</button><button class="choice word" lang="en">nine</button><button class="choice word" lang="en">four</button></div>
+    <div class="result"></div>
+  </div>
+  <div class="card q count" data-answer="five frogs">
+    <div class="frogs"><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""><img src="../img/frog.svg" alt=""></div>
+    <div class="choices"><button class="choice word" lang="en" data-ok>five</button><button class="choice word" lang="en">six</button><button class="choice word" lang="en">ten</button></div>
     <div class="result"></div>
   </div>
   <p class="score"></p>

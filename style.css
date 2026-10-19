@@ -139,3 +139,6 @@ footer{color:var(--muted);font-size:14px;margin-top:40px}
   .scene.that .dots{border-top-color:#6b6b78}
   .choice.pick{background:#fffaf0;border-width:3px}
 }
+.frogs{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:260px;min-height:96px;align-content:center}
+.frogs img{width:52px;height:52px}
+@media (prefers-color-scheme: dark){.frogs{background:#fffaf0;border-radius:10px;padding:8px}}
