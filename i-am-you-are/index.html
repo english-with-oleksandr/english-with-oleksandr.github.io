@@ -30,7 +30,8 @@
 <h1>I am, you are, he is</h1>
 <p class="lead">Повторюємо слова і хто — яке слово після нього.</p>
 
-<style>.words .ua{display:block;color:var(--muted);font-size:16px}</style>
+<style>.words .ua{display:block;color:var(--muted);font-size:16px}
+.tr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:top;line-height:1.3;margin:6px 0}.tr small{color:var(--muted);font-size:15px;font-weight:400}</style>
 <h2>Нові слова 🔊</h2>
 <p>Натисни 🔊, послухай і повтори.</p>
 <div class="card words"><div><img class="icon art" src="../img/art/pirate.jpg" alt=""><b lang="en">pirate</b><span class="ua">пірат</span><button class="say" aria-label="Послухати" data-say="pirate">🔊</button></div><div><img class="icon art" src="../img/art/clown.jpg" alt=""><b lang="en">clown</b><span class="ua">клоун</span><button class="say" aria-label="Послухати" data-say="clown">🔊</button></div><div><img class="icon art" src="../img/art/king.jpg" alt=""><b lang="en">king</b><span class="ua">король</span><button class="say" aria-label="Послухати" data-say="king">🔊</button></div><div><img class="icon art" src="../img/art/crown.jpg" alt=""><b lang="en">crown</b><span class="ua">корона</span><button class="say" aria-label="Послухати" data-say="crown">🔊</button></div><div><img class="icon art" src="../img/art/queen.jpg" alt=""><b lang="en">queen</b><span class="ua">королева</span><button class="say" aria-label="Послухати" data-say="queen">🔊</button></div><div><img class="icon art" src="../img/art/spy.jpg" alt=""><b lang="en">spy</b><span class="ua">шпигун</span><button class="say" aria-label="Послухати" data-say="spy">🔊</button></div><div><img class="icon art" src="../img/art/cowboy.jpg" alt=""><b lang="en">cowboy</b><span class="ua">ковбой</span><button class="say" aria-label="Послухати" data-say="cowboy">🔊</button></div><div><img class="icon art" src="../img/art/dancer.jpg" alt=""><b lang="en">dancer</b><span class="ua">танцівниця</span><button class="say" aria-label="Послухати" data-say="dancer">🔊</button></div></div>
@@ -78,10 +79,11 @@
 <h2>Хто — яке слово</h2>
 
 <div class="card flip" lang="en">
-  <div><span class="ph"><span class="who">I</span></span> <span class="arrow">→</span> <span class="ph"><span class="be">am</span></span></div>
-  <div><span class="ph"><span class="who">he</span> <span class="who">she</span> <span class="who">it</span></span> <span class="arrow">→</span> <span class="ph"><span class="be">is</span></span></div>
-  <div><span class="ph"><span class="who">you</span> <span class="who">we</span> <span class="who">they</span></span> <span class="arrow">→</span> <span class="ph"><span class="be">are</span></span></div>
+  <div><span class="ph"><span class="tr"><span class="who">I</span><small>я</small></span></span> <span class="arrow">→</span> <span class="ph"><span class="be">am</span></span></div>
+  <div><span class="ph"><span class="tr"><span class="who">he</span><small>він</small></span> <span class="tr"><span class="who">she</span><small>вона</small></span> <span class="tr"><span class="who">it</span><small>воно</small></span></span> <span class="arrow">→</span> <span class="ph"><span class="be">is</span></span></div>
+  <div><span class="ph"><span class="tr"><span class="who">you</span><small>ти, ви</small></span> <span class="tr"><span class="who">we</span><small>ми</small></span> <span class="tr"><span class="who">they</span><small>вони</small></span></span> <span class="arrow">→</span> <span class="ph"><span class="be">are</span></span></div>
 </div>
+<p><b lang="en">am, is, are</b> — це «є». Українською ми його не кажемо: <i lang="en">He is a spy.</i> — Він шпигун.</p>
 
 <h2>Послухай і повтори 🔊</h2>
 <div class="card ex">
