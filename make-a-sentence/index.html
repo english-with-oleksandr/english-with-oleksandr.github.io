@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Make a sentence · English with Oleksandr</title>
+<meta name="description" content="2 клас: склади речення й питання з am, is, are, isn't, aren't, am not">
+<link rel="stylesheet" href="../style.css">
+<style>
+:root{--tile:#ffffff;--tile-edge:#d9cfbd;--slot:#c9bfae;--glow:#ffd54a}
+@media (prefers-color-scheme: dark){:root{--tile:#33313b;--tile-edge:#4a4753;--slot:#5a5764;--glow:#c99a00}}
+
+/* Кольори ті самі, що на сторінках am-is-are та are-we-queens: хто — зелений, am/is/are — помаранчевий. */
+.tile{display:inline-flex;align-items:center;justify-content:center;min-height:52px;min-width:52px;padding:6px 16px;
+  font:700 24px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--tile);color:var(--ink);border:2px solid var(--tile-edge);border-radius:14px;
+  box-shadow:0 4px 0 var(--tile-edge);cursor:pointer;user-select:none;-webkit-user-select:none;
+  transition:transform .15s,box-shadow .15s,background .2s}
+.tile.who{background:var(--this);color:var(--this-ink);border-color:currentColor;box-shadow:0 4px 0 currentColor;border-radius:999px}
+.tile.be{background:var(--that);color:var(--that-ink);border-color:currentColor;box-shadow:0 4px 0 currentColor}
+.pool .tile:hover{transform:translateY(-3px);box-shadow:0 7px 0 var(--tile-edge)}
+.pool .tile.who:hover,.pool .tile.be:hover{box-shadow:0 7px 0 currentColor}
+.tile.pop{animation:pop .45s cubic-bezier(.3,1.6,.5,1) backwards}
+.tile.nope{animation:nope .45s;border-color:var(--bad)!important;color:var(--bad)!important;box-shadow:0 4px 0 var(--bad)!important}
+.tile.jump{animation:jump .5s cubic-bezier(.3,1.5,.5,1)}
+.slots .tile{cursor:default}
+.ghost{visibility:hidden}
+.task.solved .pool{display:none}
+@keyframes pop{from{transform:scale(0) rotate(-12deg);opacity:0}}
+@keyframes nope{20%{transform:translateX(-9px) rotate(-4deg)}40%{transform:translateX(8px) rotate(3deg)}60%{transform:translateX(-6px)}80%{transform:translateX(4px)}}
+@keyframes jump{40%{transform:translateY(-16px) scale(1.08)}}
+
+.slots{display:flex;flex-wrap:wrap;align-items:flex-end;gap:8px;min-height:60px}
+.slot{display:inline-flex;min-width:64px;min-height:52px;border:2px dashed var(--slot);border-radius:14px;transition:border-color .2s}
+.slot.next{border-color:var(--accent);animation:breathe 1.4s ease-in-out infinite}
+.slot.full{border-color:transparent;min-width:0}
+@keyframes breathe{50%{transform:scale(1.06)}}
+.end{font:700 32px/1 sans-serif;color:var(--muted);padding:0 2px 8px}
+.pool{display:flex;flex-wrap:wrap;gap:10px;min-height:56px}
+
+.task{display:grid;grid-template-columns:120px 1fr;gap:14px 18px;align-items:center;position:relative;overflow:hidden}
+.task .icon.art{height:120px;justify-self:center}
+.task .work{display:flex;flex-direction:column;gap:14px}
+.task .say{justify-self:start;align-self:start}
+.task.done{animation:glow 1.2s ease-out}
+.task.done .icon{animation:wiggle .7s ease-in-out}
+@keyframes glow{0%{box-shadow:0 0 0 0 var(--glow)}30%{box-shadow:0 0 0 8px var(--glow)}100%{box-shadow:0 0 0 0 transparent}}
+@keyframes wiggle{25%{transform:rotate(-6deg) scale(1.05)}75%{transform:rotate(6deg) scale(1.05)}}
+.ask{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:20px;font-weight:600}
+
+.example{border:2px solid var(--accent)}
+.example .tag{position:absolute;top:10px;right:12px;font-size:14px;font-weight:700;color:var(--accent)}
+.example .pool .tile,.example .slots .tile{cursor:default}
+.example .controls{display:flex;gap:8px;flex-wrap:wrap}
+
+.swap{font-size:24px}
+.swap .row{display:flex;flex-wrap:wrap;align-items:flex-end;gap:8px;min-height:60px}
+.swap .row .tile{cursor:default}
+
+.spark{position:absolute;width:10px;height:10px;border-radius:2px;pointer-events:none;animation:spark .9s ease-out forwards}
+@keyframes spark{to{transform:translate(var(--dx),var(--dy)) rotate(540deg);opacity:0}}
+.score.big{font-size:22px;animation:jump .6s}
+
+@media (max-width:560px){
+  .task{grid-template-columns:1fr}
+  .task .icon.art{height:110px}
+  .tile{font-size:22px;padding:6px 13px;min-height:48px}
+  .slot{min-width:54px;min-height:48px}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<main>
+<header class="site"><b>English with Oleksandr</b> · 2 клас</header>
+
+<h1>Make a sentence</h1>
+<p class="lead">Склади речення з карток: <b lang="en">I am · you / we / they are · he / she / it is</b>, і з <b lang="en">not</b>: <b lang="en">am not · isn't · aren't</b>.</p>
+
+<h2>Речення і питання</h2>
+<div class="card swap">
+  <div class="row" id="swap" lang="en"></div>
+  <p>У реченні спочатку <b>хто</b>, потім <b lang="en">am / is / are</b>. У питанні вони <b>міняються місцями</b>, а в кінці стоїть <b>?</b></p>
+  <button class="say" id="swap-btn">🔄 Поміняй місцями</button>
+</div>
+
+<h2>Дивись, як це робиться</h2>
+<p>Натисни ▶ — картки самі стануть на місце.</p>
+
+<div class="card task example" data-answer="She is a queen." data-demo>
+  <span class="tag">Приклад</span>
+  <img class="icon art" src="../img/art/queen.jpg" alt="">
+  <div class="work"><div class="slots" lang="en"></div><div class="pool" lang="en"></div>
+    <div class="controls"><button class="say play">▶ Дивись</button><button class="say" data-say="She is a queen.">🔊</button></div></div>
+</div>
+<div class="card task example" data-answer="Are they pirates?" data-demo>
+  <span class="tag">Приклад</span>
+  <img class="icon art" src="../img/art/pirates.jpg" alt="">
+  <div class="work"><div class="slots" lang="en"></div><div class="pool" lang="en"></div>
+    <div class="controls"><button class="say play">▶ Дивись</button><button class="say" data-say="Are they pirates?">🔊</button></div></div>
+</div>
+
+<h2>Завдання 1. Склади речення</h2>
+<p>Подивись на картинку. Натискай на картки по черзі — від першого слова до останнього.</p>
+
+<div class="arrange">
+  <div class="card task" data-answer="I am happy."><img class="icon art" src="../img/art/happy.jpg" alt=""><div class="work"><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <div class="card task" data-answer="He is a king."><img class="icon art" src="../img/art/king.jpg" alt=""><div class="work"><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <div class="card task" data-answer="We are friends."><img class="icon art" src="../img/art/we.jpg" alt=""><div class="work"><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <div class="card task" data-answer="It isn't a dog."><img class="icon art" src="../img/art/frog.jpg" alt=""><div class="work"><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <div class="card task" data-answer="I am not a cat."><img class="icon art" src="../img/art/me.jpg" alt=""><div class="work"><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <div class="card task" data-answer="They aren't kings."><img class="icon art" src="../img/art/clowns.jpg" alt=""><div class="work"><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <div class="card task" data-answer="You are a teacher."><img class="icon art" src="../img/art/teacher.jpg" alt=""><div class="work"><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <p class="score"></p>
+</div>
+
+<h2>Завдання 2. Склади питання</h2>
+<p>Питання починається з <b lang="en">am / is / are</b>.</p>
+
+<div class="arrange">
+  <div class="card task" data-answer="Is he a pirate?"><img class="icon art" src="../img/art/pirate.jpg" alt=""><div class="work"><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <div class="card task" data-answer="Are you happy?"><img class="icon art" src="../img/art/you.jpg" alt=""><div class="work"><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <div class="card task" data-answer="Is it a duck?"><img class="icon art" src="../img/art/duck.jpg" alt=""><div class="work"><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <div class="card task" data-answer="Are they clowns?"><img class="icon art" src="../img/art/clowns.jpg" alt=""><div class="work"><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <div class="card task" data-answer="Am I sad?"><img class="icon art" src="../img/art/sad.jpg" alt=""><div class="work"><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <div class="card task" data-answer="Are we friends?"><img class="icon art" src="../img/art/we.jpg" alt=""><div class="work"><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <p class="score"></p>
+</div>
+
+<h2>Завдання 3. Склади відповідь</h2>
+<p>Послухай питання (🔊), подивись на картинку і склади відповідь: <i lang="en">Yes…</i> чи <i lang="en">No…</i>?</p>
+
+<div class="arrange">
+  <div class="card task" data-answer="Yes, she is."><img class="icon art" src="../img/art/queen.jpg" alt=""><div class="work"><div class="ask"><button class="say" data-say="Is she a queen?">🔊</button><span lang="en">Is she a queen?</span></div><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <div class="card task" data-answer="No, it isn't."><img class="icon art" src="../img/art/frog.jpg" alt=""><div class="work"><div class="ask"><button class="say" data-say="Is it a duck?">🔊</button><span lang="en">Is it a duck?</span></div><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <div class="card task" data-answer="Yes, they are."><img class="icon art" src="../img/art/pirates.jpg" alt=""><div class="work"><div class="ask"><button class="say" data-say="Are they pirates?">🔊</button><span lang="en">Are they pirates?</span></div><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <div class="card task" data-answer="No, they aren't."><img class="icon art" src="../img/art/clowns.jpg" alt=""><div class="work"><div class="ask"><button class="say" data-say="Are they kings?">🔊</button><span lang="en">Are they kings?</span></div><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <div class="card task" data-answer="No, I'm not."><img class="icon art" src="../img/art/me.jpg" alt=""><div class="work"><div class="ask"><button class="say" data-say="Are you a cat?">🔊</button><span lang="en">Are you a cat?</span></div><div class="slots" lang="en"></div><div class="pool" lang="en"></div><div class="result"></div></div></div>
+  <p class="score"></p>
+</div>
+
+<footer>Для батьків: дитина натискає картки по черзі. Неправильна картка трясеться й лишається на місці — це підказка, а не помилка. Коли речення готове, його читає британський голос: повторіть разом.</footer>
+</main>
+<script src="../site.js"></script>
+<script>
+const WHO = new Set(['i', 'you', 'he', 'she', 'it', 'we', 'they', "i'm"]);
+const BE = new Set(['am', 'is', 'are', "isn't", "aren't"]);
+const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const wait = ms => new Promise(r => setTimeout(r, calm ? 0 : ms));
+
+// Розбиває відповідь на слова й знак у кінці: "No, it isn't." → ["No,", "it", "isn't"] і ".".
+function parse(answer) {
+  return { words: answer.slice(0, -1).split(' '), end: answer.slice(-1) };
+}
+
+// Картки показуємо з малої літери, щоб велика не підказувала перше слово. "I" лишається великою.
+function shown(word) {
+  return /^I('m)?$/.test(word) ? word : word.toLowerCase();
+}
+
+function capital(word) {
+  return word[0].toUpperCase() + word.slice(1);
+}
+
+function makeTile(word) {
+  const t = document.createElement('span');
+  const key = word.toLowerCase().replace(/,$/, '');
+  t.className = 'tile' + (WHO.has(key) ? ' who' : BE.has(key) ? ' be' : '');
+  t.textContent = shown(word);
+  return t;
+}
+
+// Перемішує так, щоб порядок ніколи не збігався з правильним.
+function shuffle(list) {
+  if (list.length < 2) return list.slice();
+  let out;
+  do {
+    out = list.slice();
+    for (let i = out.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [out[i], out[j]] = [out[j], out[i]];
+    }
+  } while (out.every((w, i) => w === list[i]));
+  return out;
+}
+
+// FLIP: запам'ятати, де елементи були, змінити DOM, плавно перенести їх із старого місця на нове.
+function flip(els, change, ms = 450) {
+  const before = els.map(e => e.getBoundingClientRect());
+  change();
+  if (calm) return Promise.resolve();
+  return Promise.all(els.map((e, i) => {
+    const after = e.getBoundingClientRect();
+    const dx = before[i].left - after.left, dy = before[i].top - after.top;
+    if (!dx && !dy) return null;
+    return e.animate([
+      { transform: `translate(${dx}px,${dy}px)` },
+      { transform: 'translate(0,-14px) scale(1.12)', offset: .6 },
+      { transform: 'none' }
+    ], { duration: ms, easing: 'cubic-bezier(.3,1.25,.5,1)' }).finished;
+  }));
+}
+
+function sparkle(card) {
+  if (calm) return;
+  const colors = ['#ffd54a', '#2f7de1', '#1f7a3d', '#ff7b54', '#c86bfa'];
+  const box = card.getBoundingClientRect();
+  for (let i = 0; i < 26; i++) {
+    const s = document.createElement('span');
+    s.className = 'spark';
+    s.style.left = box.width / 2 + 'px';
+    s.style.top = box.height / 2 + 'px';
+    s.style.background = colors[i % colors.length];
+    const a = Math.random() * Math.PI * 2, r = 80 + Math.random() * 140;
+    s.style.setProperty('--dx', Math.cos(a) * r + 'px');
+    s.style.setProperty('--dy', Math.sin(a) * r + 'px');
+    card.appendChild(s);
+    setTimeout(() => s.remove(), 950);
+  }
+}
+
+// Готує картку: порожні місця, знак у кінці й перемішані слова.
+function setup(card) {
+  const { words, end } = parse(card.dataset.answer);
+  const slots = card.querySelector('.slots'), pool = card.querySelector('.pool');
+  slots.innerHTML = pool.innerHTML = '';
+  card.classList.remove('solved');
+  words.forEach(() => slots.appendChild(Object.assign(document.createElement('span'), { className: 'slot' })));
+  slots.appendChild(Object.assign(document.createElement('span'), { className: 'end', textContent: end }));
+  const tiles = shuffle(words).map(w => { const t = makeTile(w); t.dataset.word = w; pool.appendChild(t); return t; });
+  tiles.forEach((t, i) => { t.classList.add('pop'); t.style.animationDelay = i * 70 + 'ms'; });
+  markNext(card);
+  return { words, tiles, slots: [...slots.querySelectorAll('.slot')] };
+}
+
+function markNext(card) {
+  const slots = [...card.querySelectorAll('.slot')];
+  slots.forEach(s => s.classList.remove('next'));
+  const free = slots.find(s => !s.classList.contains('full'));
+  if (free && !card.hasAttribute('data-demo')) free.classList.add('next');
+}
+
+// Переносить картку з купки на перше вільне місце; на своєму місці перше слово отримує велику літеру.
+async function place(tile, slot, first) {
+  const ghost = tile.cloneNode(true);
+  ghost.className = tile.className.replace(/\bpop\b/, '') + ' ghost';
+  ghost.removeAttribute('style');
+  await flip([tile], () => {
+    tile.classList.remove('pop');
+    tile.style.animationDelay = '';
+    tile.replaceWith(ghost);
+    if (first) tile.textContent = capital(tile.textContent);
+    slot.appendChild(tile);
+    slot.classList.add('full');
+  });
+}
+
+async function celebrate(card, tiles) {
+  card.classList.remove('done');
+  void card.offsetWidth;
+  card.classList.add('done', 'solved');
+  sparkle(card);
+  for (const t of tiles) { t.classList.remove('jump'); void t.offsetWidth; t.classList.add('jump'); await wait(90); }
+}
+
+function startTask(card, onDone) {
+  const { words, slots } = setup(card);
+  const result = card.querySelector('.result');
+  let next = 0, missed = false;
+  card.querySelector('.pool').addEventListener('click', async e => {
+    const tile = e.target.closest('.tile');
+    if (!tile || tile.classList.contains('ghost') || next >= words.length) return;
+    if (tile.dataset.word !== words[next]) {
+      missed = true;
+      tile.classList.remove('nope'); void tile.offsetWidth; tile.classList.add('nope');
+      tile.addEventListener('animationend', () => tile.classList.remove('nope'), { once: true });
+      result.textContent = 'Спробуй ще раз 🙂';
+      result.className = 'result bad';
+      return;
+    }
+    const slot = slots[next++];
+    result.textContent = '';
+    const done = next === words.length;
+    await place(tile, slot, next === 1);
+    markNext(card);
+    if (!done) return;
+    speak(card.dataset.answer);
+    result.textContent = '✅ ' + card.dataset.answer;
+    result.className = 'result ok';
+    celebrate(card, slots.map(s => s.firstChild));
+    onDone(!missed);
+  });
+}
+
+document.querySelectorAll('.arrange').forEach(group => {
+  const cards = [...group.querySelectorAll('.task')];
+  const score = group.querySelector('.score');
+  let done = 0, first = 0;
+  cards.forEach(card => startTask(card, clean => {
+    done++;
+    if (clean) first++;
+    score.classList.toggle('big', done === cards.length);
+    score.textContent = done === cards.length
+      ? '🎉 Готово! З першої спроби: ' + first + ' з ' + cards.length
+      : 'Зроблено: ' + done + ' з ' + cards.length;
+    if (done === cards.length) sparkle(group);
+  }));
+});
+
+// Приклад: картки самі по черзі летять на місце, потім звучить речення.
+async function playDemo(card, withVoice) {
+  if (card.dataset.busy) return;
+  card.dataset.busy = '1';
+  const { words, tiles, slots } = setup(card);
+  await wait(900);
+  for (let i = 0; i < words.length; i++) {
+    const tile = tiles.find(t => t.dataset.word === words[i] && !t.parentElement.classList.contains('slot'));
+    await place(tile, slots[i], i === 0);
+    await wait(350);
+  }
+  if (withVoice) speak(card.dataset.answer);
+  await celebrate(card, slots.map(s => s.firstChild));
+  delete card.dataset.busy;
+}
+
+document.querySelectorAll('[data-demo]').forEach(card => {
+  setup(card);
+  card.querySelector('.play').addEventListener('click', () => playDemo(card, true));
+  // Без звуку, бо браузер не дає грати звук до першого натискання.
+  new IntersectionObserver((seen, obs) => {
+    if (seen[0].isIntersecting) { obs.disconnect(); playDemo(card, false); }
+  }, { threshold: .4 }).observe(card);
+});
+
+// Правило: "She is a queen." ↔ "Is she a queen?" — дві картки міняються місцями.
+(function swapRule() {
+  const row = document.getElementById('swap');
+  const who = makeTile('she'), be = makeTile('is');
+  const rest = Object.assign(document.createElement('span'), { className: 'tile', textContent: 'a queen' });
+  const end = Object.assign(document.createElement('span'), { className: 'end', textContent: '.' });
+  row.append(who, be, rest, end);
+  let question = false;
+  function render() {
+    who.textContent = question ? 'she' : 'She';
+    be.textContent = question ? 'Is' : 'is';
+    end.textContent = question ? '?' : '.';
+  }
+  render();
+  document.getElementById('swap-btn').addEventListener('click', async () => {
+    question = !question;
+    await flip([who, be], () => { row.insertBefore(question ? be : who, row.firstChild); render(); }, 600);
+    speak(question ? 'Is she a queen?' : 'She is a queen.');
+  });
+})();
+</script>
+</body>
+</html>
