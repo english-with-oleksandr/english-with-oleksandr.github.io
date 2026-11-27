@@ -40,13 +40,14 @@
 .notebook{background:var(--that);border-color:var(--that-ink)}
 .notebook b{color:var(--that-ink)}
 
-.dict{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:12px 0}
+.dict{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));align-items:start;gap:12px;margin:12px 0}
 .dict .card{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
 .dict .n{font-weight:700;color:var(--muted)}
 .dict .say{font-size:26px;min-height:56px;min-width:80px}
 .check{border:2px solid var(--line);background:var(--card);color:var(--accent);border-radius:12px;min-height:44px;padding:4px 12px;font-size:16px}
 .reveal{display:flex;flex-direction:column;align-items:center;gap:4px}
 .reveal b{font-size:26px}
+.reveal[hidden]{display:none}
 
 .draw{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .draw .card{margin:0;text-align:center}
