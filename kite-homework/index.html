@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kite, bike, radio: пишемо · English with Oleksandr</title>
+<meta name="description" content="2 клас, додаткове завдання: розплутай слово, послухай і напиши, намалюй і підпиши (old / new).">
+<link rel="stylesheet" href="../style.css">
+<style>
+:root{--tile:#ffffff;--tile-edge:#d9cfbd;--slot:#c9bfae;--glow:#ffd54a}
+@media (prefers-color-scheme: dark){:root{--tile:#33313b;--tile-edge:#4a4753;--slot:#5a5764;--glow:#c99a00}}
+
+.tile{display:inline-flex;align-items:center;justify-content:center;min-height:52px;min-width:52px;padding:6px 12px;
+  font:700 28px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--tile);color:var(--ink);border:2px solid var(--tile-edge);border-radius:14px;
+  box-shadow:0 4px 0 var(--tile-edge);cursor:pointer;user-select:none;-webkit-user-select:none;
+  transition:transform .15s,box-shadow .15s}
+.pool .tile:hover{transform:translateY(-3px);box-shadow:0 7px 0 var(--tile-edge)}
+.tile.pop{animation:pop .45s cubic-bezier(.3,1.6,.5,1) backwards}
+.tile.nope{animation:nope .45s;border-color:var(--bad);color:var(--bad);box-shadow:0 4px 0 var(--bad)}
+.slots .tile{cursor:default;background:var(--this);color:var(--this-ink);border-color:currentColor;box-shadow:0 4px 0 currentColor}
+.ghost{visibility:hidden}
+@keyframes pop{from{transform:scale(0) rotate(-12deg);opacity:0}}
+@keyframes nope{20%{transform:translateX(-9px) rotate(-4deg)}40%{transform:translateX(8px) rotate(3deg)}60%{transform:translateX(-6px)}80%{transform:translateX(4px)}}
+
+.slots{display:flex;flex-wrap:wrap;gap:6px;min-height:58px}
+.slot{display:inline-flex;min-width:52px;min-height:52px;border:2px dashed var(--slot);border-radius:14px}
+.slot.next{border-color:var(--accent);animation:breathe 1.4s ease-in-out infinite}
+.slot.full{border-color:transparent}
+@keyframes breathe{50%{transform:scale(1.06)}}
+.pool{display:flex;flex-wrap:wrap;gap:8px;min-height:56px}
+
+.task{display:grid;grid-template-columns:130px 1fr;gap:14px 18px;align-items:center}
+.task .icon.art{justify-self:center}
+.task .work{display:flex;flex-direction:column;gap:12px}
+.task.done{animation:glow 1.2s ease-out}
+@keyframes glow{0%{box-shadow:0 0 0 0 var(--glow)}30%{box-shadow:0 0 0 8px var(--glow)}100%{box-shadow:0 0 0 0 transparent}}
+
+.notebook{background:var(--that);border-color:var(--that-ink)}
+.notebook b{color:var(--that-ink)}
+
+.dict{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:12px 0}
+.dict .card{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.dict .n{font-weight:700;color:var(--muted)}
+.dict .say{font-size:26px;min-height:56px;min-width:80px}
+.check{border:2px solid var(--line);background:var(--card);color:var(--accent);border-radius:12px;min-height:44px;padding:4px 12px;font-size:16px}
+.reveal{display:flex;flex-direction:column;align-items:center;gap:4px}
+.reveal b{font-size:26px}
+
+.draw{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.draw .card{margin:0;text-align:center}
+.draw .en{font-size:21px;font-weight:600;margin:6px 0}
+
+@media (max-width:560px){
+  .task{grid-template-columns:1fr}
+  .tile{font-size:24px;min-width:46px;min-height:46px;padding:6px 10px}
+  .slot{min-width:46px;min-height:46px}
+  .draw{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<main>
+<header class="site"><b>English with Oleksandr</b> · 2 клас</header>
+
+<h1>Kite, bike, radio: пишемо!</h1>
+<p class="lead">Додаткове завдання до уроку <b lang="en">It's his kite</b> (Fly High 2, стор. 50). Слова: kite, bike, radio, cloudy, old, new.</p>
+
+<div class="card notebook">
+  <p><b>Знадобиться зошит з англійської і олівці.</b> Завдання 1 і 2 — дитина пише слова в зошит, завдання 3 — малює й підписує. Разом 15–20 хвилин.</p>
+</div>
+
+<h2>Завдання 1. Розплутай слово</h2>
+<p>Літери переплуталися! Подивись на картинку і натискай літери по черзі. Потім <b>напиши слово в зошит двічі</b>.</p>
+<div class="spell">
+  <div class="card task" data-word="kite"><img class="icon art" src="../img/art/kite.jpg" alt=""><div class="work"><div class="slots"></div><div class="pool"></div><div class="result"></div></div></div>
+  <div class="card task" data-word="bike"><img class="icon art" src="../img/art/bike.jpg" alt=""><div class="work"><div class="slots"></div><div class="pool"></div><div class="result"></div></div></div>
+  <div class="card task" data-word="radio"><img class="icon art" src="../img/art/radio.jpg" alt=""><div class="work"><div class="slots"></div><div class="pool"></div><div class="result"></div></div></div>
+  <div class="card task" data-word="cloudy"><img class="icon art" src="../img/art/cloudy.jpg" alt=""><div class="work"><div class="slots"></div><div class="pool"></div><div class="result"></div></div></div>
+  <div class="card task" data-word="old"><img class="icon art" src="../img/art/old-car.jpg" alt=""><div class="work"><div class="slots"></div><div class="pool"></div><div class="result"></div></div></div>
+  <div class="card task" data-word="new"><img class="icon art" src="../img/art/new-ball.jpg" alt=""><div class="work"><div class="slots"></div><div class="pool"></div><div class="result"></div></div></div>
+  <p class="score"></p>
+</div>
+
+<h2>Завдання 2. Послухай і напиши</h2>
+<p>Натисни 🔊, послухай слово і <b>напиши його в зошит</b>. Потім натисни «Перевір себе».</p>
+<div class="dict">
+  <div class="card"><span class="n">1</span><button class="say" aria-label="Послухати" data-say="new">🔊</button><button class="check">👀 Перевір себе</button><div class="reveal" hidden><img class="icon art" src="../img/art/new-ball.jpg" alt=""><b lang="en">new</b></div></div>
+  <div class="card"><span class="n">2</span><button class="say" aria-label="Послухати" data-say="kite">🔊</button><button class="check">👀 Перевір себе</button><div class="reveal" hidden><img class="icon art" src="../img/art/kite.jpg" alt=""><b lang="en">kite</b></div></div>
+  <div class="card"><span class="n">3</span><button class="say" aria-label="Послухати" data-say="cloudy">🔊</button><button class="check">👀 Перевір себе</button><div class="reveal" hidden><img class="icon art" src="../img/art/cloudy.jpg" alt=""><b lang="en">cloudy</b></div></div>
+  <div class="card"><span class="n">4</span><button class="say" aria-label="Послухати" data-say="bike">🔊</button><button class="check">👀 Перевір себе</button><div class="reveal" hidden><img class="icon art" src="../img/art/bike.jpg" alt=""><b lang="en">bike</b></div></div>
+  <div class="card"><span class="n">5</span><button class="say" aria-label="Послухати" data-say="old">🔊</button><button class="check">👀 Перевір себе</button><div class="reveal" hidden><img class="icon art" src="../img/art/old-car.jpg" alt=""><b lang="en">old</b></div></div>
+  <div class="card"><span class="n">6</span><button class="say" aria-label="Послухати" data-say="radio">🔊</button><button class="check">👀 Перевір себе</button><div class="reveal" hidden><img class="icon art" src="../img/art/radio.jpg" alt=""><b lang="en">radio</b></div></div>
+</div>
+<p>Помилився? Нічого страшного — виправ у зошиті й напиши слово ще раз.</p>
+
+<h2>Завдання 3. Намалюй і підпиши</h2>
+<p>Знайди вдома <b>одну стару іграшку</b> і <b>одну нову</b>. Намалюй їх у зошиті і підпиши, як у прикладі. Натисни 🔊 і прочитай вголос.</p>
+<div class="draw">
+  <div class="card"><img class="icon art" src="../img/art/old-car.jpg" alt=""><div class="en" lang="en">It's an old car.</div><button class="say" aria-label="Послухати" data-say="It's an old car.">🔊</button></div>
+  <div class="card"><img class="icon art" src="../img/art/new-ball.jpg" alt=""><div class="en" lang="en">It's a new ball.</div><button class="say" aria-label="Послухати" data-say="It's a new ball.">🔊</button></div>
+</div>
+<p>Слова для підпису: <b lang="en">ball, doll, car, robot, kite, bike</b>. Пам'ятай: <b lang="en">an old</b>, але <b lang="en">a new</b>.</p>
+
+<footer>Для батьків: у завданні 1 неправильна літера трясеться й лишається на місці — це підказка, а не помилка. У завданні 2 перевірте зошит разом із дитиною після «Перевір себе». У завданні 3 зверніть увагу на <i lang="en">an old</i> / <i lang="en">a new</i>. 🔊 — запис британської вимови.</footer>
+</main>
+<script src="../site.js"></script>
+<script>
+
+// Перемішує літери так, щоб слово не лишилося на місці.
+function scramble(word) {
+  const letters = [...word];
+  do {
+    for (let i = letters.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [letters[i], letters[j]] = [letters[j], letters[i]];
+    }
+  } while (letters.join('') === word);
+  return letters;
+}
+
+function tile(letter) {
+  const t = document.createElement('button');
+  t.className = 'tile pop';
+  t.textContent = letter;
+  return t;
+}
+
+function markNext(slots) {
+  slots.forEach(s => s.classList.remove('next'));
+  const free = slots.find(s => !s.classList.contains('full'));
+  if (free) free.classList.add('next');
+}
+
+function shake(t) {
+  t.classList.remove('nope'); void t.offsetWidth; t.classList.add('nope');
+  t.addEventListener('animationend', () => t.classList.remove('nope'), { once: true });
+}
+
+function startSpell(card, onDone) {
+  const word = card.dataset.word;
+  const slotsBox = card.querySelector('.slots'), pool = card.querySelector('.pool'), result = card.querySelector('.result');
+  const slots = [...word].map(() => slotsBox.appendChild(Object.assign(document.createElement('span'), { className: 'slot' })));
+  scramble(word).forEach((l, i) => { const t = pool.appendChild(tile(l)); t.style.animationDelay = i * 70 + 'ms'; });
+  markNext(slots);
+  let next = 0, missed = false;
+  pool.addEventListener('click', e => {
+    const t = e.target.closest('.tile');
+    if (!t || t.classList.contains('ghost') || next >= word.length) return;
+    // Однакові літери взаємозамінні: перевіряємо саму літеру, а не плитку.
+    if (t.textContent !== word[next]) {
+      missed = true;
+      shake(t);
+      result.textContent = 'Спробуй ще раз 🙂';
+      result.className = 'result bad';
+      return;
+    }
+    const ghost = t.cloneNode(true);
+    ghost.className = 'tile ghost';
+    t.replaceWith(ghost);
+    t.classList.remove('pop');
+    slots[next].appendChild(t);
+    slots[next++].classList.add('full');
+    result.textContent = '';
+    markNext(slots);
+    if (next < word.length) return;
+    speak(word);
+    result.textContent = '✅ ' + word + ' — тепер напиши в зошит двічі ✏️';
+    result.className = 'result ok';
+    card.classList.add('done');
+    onDone(!missed);
+  });
+}
+
+document.querySelectorAll('.spell').forEach(group => {
+  const cards = [...group.querySelectorAll('.task')];
+  const score = group.querySelector('.score');
+  let done = 0, first = 0;
+  cards.forEach(card => startSpell(card, clean => {
+    done++;
+    if (clean) first++;
+    score.textContent = done === cards.length
+      ? '🎉 Готово! З першої спроби: ' + first + ' з ' + cards.length
+      : 'Зроблено: ' + done + ' з ' + cards.length;
+  }));
+});
+
+document.querySelectorAll('.dict .check').forEach(b => b.addEventListener('click', () => {
+  const r = b.nextElementSibling;
+  r.hidden = !r.hidden;
+  b.textContent = r.hidden ? '👀 Перевір себе' : '🙈 Сховати';
+}));
+</script>
+</body>
+</html>
